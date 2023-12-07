@@ -42,6 +42,7 @@
 | Column Name  | Data Type | Primary Key | Foreign Key |
 | ------------ | --------- | ----------- | ----------- |
 | id  | INT  | Yes | |
+| description  | Varchar(1000)  |  | |
 | group_id  | INT  | | Yes |
 | is_group_expense  | BIT  | |  |
 | paid_by_user_id  | INT  | | Yes |

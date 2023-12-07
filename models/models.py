@@ -1,3 +1,4 @@
+from dataclasses import dataclass
 from datetime import datetime
 from typing import List
 
@@ -18,20 +19,22 @@ class Group(BaseModel):
     user_list: List[User]
     created_by:User
 
+class ExpenseSplit(BaseModel):
+    user:User
+    split_amount:float 
 
 class Expense(BaseModel):
+    description:str
     paid_by:User
     paid_amount:float
     group:Group
     is_group_expense:bool
+    exppense_splits: List[ExpenseSplit]
 
 
-class ExpenseSplit(BaseModel):
-    expense: Expense
-    user:User
-    split_amount:float 
 
 
+@dataclass
 class Transaction(BaseModel):
     is_group_transaction:bool
     group:Group
