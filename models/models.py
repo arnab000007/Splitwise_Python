@@ -27,9 +27,9 @@ class Expense(BaseModel):
 
 
 class ExpenseSplit(BaseModel):
-    direct_expense: Expense
-    user_split_for:User
-    user_split_amount:float 
+    expense: Expense
+    user:User
+    split_amount:float 
 
 
 class Transaction(BaseModel):
